@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
+import {Chart, ChartDataSets, ChartOptions, ChartType} from 'chart.js';
 import {Label} from 'ng2-charts';
 import {ProbaService} from '../proba.service';
 
@@ -10,7 +10,7 @@ import {ProbaService} from '../proba.service';
 })
 
 export class BarChartComponent implements OnInit {
-
+  chart: any = [];
   constructor(private serviceProba: ProbaService) {
   }
 
@@ -41,6 +41,39 @@ export class BarChartComponent implements OnInit {
         const prodaja = res.map((res: { prodaja: any; }) => res.prodaja);
 
         console.log(region);
-});
-  }
-}
+
+        this.chart = new Chart('canvas', {
+          type: 'bar',
+          data: {
+            labels: region,
+            this.chart = new Chart('canvas', {
+              type: 'bar',
+              data: {
+                labels: region,
+                datasets: [
+                  {
+                    data: prodaja,
+                    borderColor: '#3cba9f',
+                    // fill: true
+                  },
+                ]
+              }
+              ,
+              options: {
+
+                scales: {
+                  xAxes: {
+                    display: true
+                  },
+                  yAxes: {
+                    display: true
+                  },
+
+                }
+              }
+            })
+
+          });
+      };
+      }
+
