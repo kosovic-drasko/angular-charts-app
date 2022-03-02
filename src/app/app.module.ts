@@ -10,7 +10,7 @@ import { RadarChartComponent } from './radar-chart/radar-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BubbleChartComponent } from './bubble-chart/bubble-chart.component';
 
-import { ChartsModule } from 'ng2-charts';
+import {ChartsModule, ThemeService} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { ChartsModule } from 'ng2-charts';
     AppRoutingModule,
     ChartsModule
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
