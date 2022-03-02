@@ -11,6 +11,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { BubbleChartComponent } from './bubble-chart/bubble-chart.component';
 
 import {ChartsModule, ThemeService} from 'ng2-charts';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {ChartsModule, ThemeService} from 'ng2-charts';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    HttpClientModule,
   ],
   providers: [ThemeService],
   bootstrap: [AppComponent]
